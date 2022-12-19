@@ -111,10 +111,13 @@ export default class linkedList {
   removeAt(index) {
     if (index > this.size || index <= 0) {
       return `Current size is ${this.size}. Provide index from 1-${this.size} only.`;
+    } else if (index == 1) {
+      this.size--;
+      return (this.currentList = this.currentList.next);
     } else {
       let counter = 1,
-        prev,
-        tmp = this.currentList;
+        tmp = this.currentList,
+        prev;
       while (counter !== index) {
         prev = tmp;
         if (tmp.next == null) {
@@ -124,6 +127,7 @@ export default class linkedList {
         }
         counter++;
       }
+
       prev.next = tmp.next;
       this.size--;
       return this.currentList;
