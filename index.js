@@ -1,10 +1,9 @@
 import linkedList from "./linkedList.js";
 
 const nodeLinkedList = new linkedList();
-nodeLinkedList.prepend("data2");
-nodeLinkedList.append("data1");
-nodeLinkedList.prepend("data3");
-console.log(nodeLinkedList.currentList); //node {value: 'data3', next: node}
+nodeLinkedList.prepend("data2"); //added at the beginning
+nodeLinkedList.append("data1"); //added at the end
+nodeLinkedList.prepend("data3"); //added at the beginning
 console.log(nodeLinkedList.size); //3
 console.log(nodeLinkedList.head()); //node {value: 'data3', next: node}
 console.log(nodeLinkedList.tail()); //node {value: 'data1', next: null}
